@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Katzengesundheit – Langlebigkeits-Assistent</title>
+  <meta name="description" content="Lokale App für die Gesundheit und Langlebigkeit deiner Katzen." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- PWA / installierbar aufs Handy -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#ff7a59" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Katzengesundheit" />
+</head>
+<body>
+  <div class="app">
+    <!-- Seitenleiste -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">🐱</span>
+        <div>
+          <h1>Katzengesundheit</h1>
+          <div class="sub">Langlebigkeit</div>
+        </div>
+      </div>
+
+      <div class="nav-section">Meine Katzen</div>
+      <button class="nav-item" data-view="cats"><span class="ico">🐈</span> Übersicht</button>
+
+      <div class="nav-section">Werkzeuge</div>
+      <button class="nav-item" data-view="food"><span class="ico">🥫</span> Futter-Analyse</button>
+      <button class="nav-item" data-view="nutrients"><span class="ico">🧬</span> Nährstoff-Wissen</button>
+      <button class="nav-item" data-view="diseases"><span class="ico">🩺</span> Krankheiten &amp; Vorbeugung</button>
+
+      <div class="nav-section">Mehr</div>
+      <button class="nav-item" data-view="data"><span class="ico">💾</span> Daten &amp; Backup</button>
+      <button class="nav-item" data-view="about"><span class="ico">ℹ️</span> Über &amp; Hinweise</button>
+
+      <div class="sidebar-footer">
+        Läuft 100 % lokal.<br />Keine tierärztliche Beratung.
+      </div>
+    </aside>
+
+    <!-- Hauptbereich -->
+    <main class="main" id="main"></main>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+
+  <!-- Daten -->
+  <script src="assets/js/data-nutrients.js"></script>
+  <script src="assets/js/data-breeds.js"></script>
+  <script src="assets/js/data-diseases.js"></script>
+  <script src="assets/js/data-foods-db.js"></script>
+  <!-- Logik -->
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/calc.js"></script>
+  <script src="assets/js/recommend.js"></script>
+  <script src="assets/js/careplan.js"></script>
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+
+  <!-- Service Worker (Offline / installierbar) -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js").catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>
