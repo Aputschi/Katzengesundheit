@@ -7,9 +7,26 @@ wissenschaftlich orientierter Richtwerte (FEDIAF, NRC, AAFCO, WSAVA).
 Keine Cloud, kein Server im Internet, kein Tracking. Alle Daten bleiben in
 deinem Browser auf diesem Gerät.
 
+**🔗 Live:** https://aputschi.github.io/Katzengesundheit/
+
 ---
 
-## Starten
+## Aufs Handy installieren (als App)
+
+1. Öffne https://aputschi.github.io/Katzengesundheit/ auf dem Handy
+   (Safari auf iPhone, Chrome auf Android).
+2. **iPhone:** Teilen-Symbol → **„Zum Home-Bildschirm"**.
+   **Android:** Menü (⋮) → **„App installieren"** bzw. „Zum Startbildschirm hinzufügen".
+3. Fertig – die App liegt mit eigenem Icon auf dem Homescreen und funktioniert
+   dank Service Worker auch offline.
+
+> Deine Katzendaten werden nur lokal auf dem jeweiligen Gerät gespeichert
+> (Handy und PC teilen sich die Daten also nicht automatisch – dafür gibt es
+> den JSON-Export/-Import unter „Daten & Backup").
+
+---
+
+## Lokal starten (PC)
 
 **Variante A – per Doppelklick (empfohlen):**
 
